@@ -1,1 +1,1 @@
-# Full-Stack-Typescrypt
+# Full-Stack-Typescript
