@@ -6,6 +6,7 @@ import express from 'express';
 import {ApolloServer} from 'apollo-server-express';
 import {buildSchema} from 'type-graphql';
 import {helloResolver} from './resolvers/hello';
+import { PostResolver } from "./resolvers/post";
 
 
 
@@ -15,9 +16,10 @@ const main = async () => {
   
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers:[helloResolver],
+      resolvers:[helloResolver,PostResolver],
       validate:false
-    })
+    }),
+    context:()=>({em:orm.em})
   });
 
   // graphql endpoint
