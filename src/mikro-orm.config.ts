@@ -9,6 +9,8 @@ export default {
     pattern: /^[\w-]+\d+\.[tj]s$/,
   },
   
+  user:'postgres',
+  password:'postgres',
   entities: [Post],
   dbName: "lireddit",
   type: "postgresql",
